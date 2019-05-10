@@ -145,7 +145,7 @@ export default class BundlerRunner {
       });
 
       // build a graph of just the transformed asset
-      let graph = await builder.build();
+      let {assetGraph: graph} = await builder.build();
 
       let entry = graph.getEntryAssets()[0];
       let subGraph = graph.getSubGraph(nullthrows(graph.getNode(entry.id)));
